@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 pt-4">
+        <div class="container">
+            <div class="card">
+                <div class="card-header text-left">
+                    <h5>Productos</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                            <th scope="col">BarCode</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Unidades</th>
+                            <th scope="col">Edición</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each productos_db}}
+                            <tr>
+                            <th scope="row">{{this.barcode}}</th>
+                            <td>{{this.title}}</td>
+                            <td>{{this.precio}}</td>
+                            <td>{{this.unidades}}</td>
+                            <td><a href="/stock/edit/{{this.barcode}}"><i class="fas fa-edit"></i></a>&nbsp&nbsp&nbsp&nbsp&nbsp<a href="/stock/delete/{{this.barcode}}"><i class="fas fa-trash-alt"></i></a></td>
+                            </tr>
+                            {{else}}
+                            <tr>
+                            <th scope="row">Ninguno</th>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

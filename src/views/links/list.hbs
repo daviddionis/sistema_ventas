@@ -1,0 +1,26 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each links}}
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <a href="{{this.url}}" target=".blank">
+                        <h3 class="card-title text-uppercase">{{this.title}}</h3>
+                    </a>
+                    <p class="m-2">{{this.description}}</p>
+                    <p>{{timeago created_at}}</p>
+                    <a href="/links/delete/{{this.id}}" class="btn btn-danger">Eliminar</a>
+                    <a href="/links/edit/{{this.id}}" class="btn btn-secondary">Editar</a>
+                </div>
+            </div>
+        </div>
+        {{else}}
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center">
+                    <p>Aun no hay ningun link</p>
+                    <a href="/links/add">Crear Uno!</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>

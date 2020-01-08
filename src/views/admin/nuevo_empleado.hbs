@@ -1,0 +1,39 @@
+
+<div class="container p-4">
+  <div class="row">
+    <div class="col-md-4 mx-auto">
+      <div class="card text-center">
+        <div class="card-header">
+          <h3>Registrador Empleado</h3>
+        </div>
+        <div class="card-body">
+          <form action="/admin/nuevo_empleado" method="POST">
+            <div class="form-group text-left">
+              <h5>Nuevo Empleado:</h5>
+            </div>
+            <div class="form-group">
+              <input type="text" name="fullname" placeholder="Nombre Completo" class="form-control" >
+            </div>
+            <div class="form-group">
+              <input type="text" name="username" placeholder="Usuario" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" name="password" placeholder="Password" class="form-control">
+            </div>
+            <div class="form-group">
+              <select class="form-control" name="is_admin">
+                <option>Empleado</option>
+                <option>Administrador</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-success btn-block">
+                Registrar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

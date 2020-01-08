@@ -1,0 +1,55 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Inventario</h4>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <h5>Añadir Producto</h5>
+                    </div>
+                    <form action="/stock/add" method="POST">
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon3">Código de Barras</span>
+                                </div>
+                                <input type="text" class="form-control" name="barcode" aria-describedby="basic-addon3">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon3">Descripción</span>
+                                </div>
+                                <input type="text" class="form-control" name="title" aria-describedby="basic-addon3">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon3">Precio</span>
+                                </div>
+                                <input type="text" step=".01" class="form-control" name="precio" aria-describedby="basic-addon3">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon3">Unidades</span>
+                                </div>
+                                <input type="text" class="form-control" name="unidades" aria-describedby="basic-addon3">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                Guardar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

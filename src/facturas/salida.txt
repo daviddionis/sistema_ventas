@@ -1,0 +1,6 @@
+Tienda TuMadre
+
+1 [4464]: Bacon 100g    2.55€
+1 [31312]: Agua 6L    0.95€
+
+Total: 3.5€

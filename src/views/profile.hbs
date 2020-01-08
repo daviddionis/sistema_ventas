@@ -1,0 +1,16 @@
+<div class="container pb-2 pt-4">
+    <div class="row">
+        <div class="col-md-12 mx-left">
+            <div class="card text-left">
+                <div class="card-body">
+                    {{#if user.is_root}}
+                    <h4>Bienvenido {{user.fullname}} <span style="color: green">[Admin]</span></h4>
+                    {{else}}
+                    <h4>Bienvenido {{user.fullname}} <span style="color: red">[No Admin]</span></h4>
+                    {{/if}}
+                    <h6>Usuario: {{user.username}}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
