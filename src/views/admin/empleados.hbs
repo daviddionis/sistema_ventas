@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 pt-4">
+        <div class="container">
+            <div class="card">
+                <div class="card-header text-left">
+                    <h5>Productos</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Usuario</th>
+                            <th scope="col">Nombre Completo</th>
+                            <th scope="col">Administrador</th>
+                            <th scope="col">Edición</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each empleados}}
+                            <tr>
+                            <th scope="row">{{this.id}}</th>
+                            <td>{{this.username}}</td>
+                            <td>{{this.fullname}}</td>
+                            {{#if this.is_root}}
+                            <td><span style="color: green;">Si</span></td>
+                            {{else}}
+                            <td><span style="color: red;">No</span></td>
+                            {{/if}}
+                            <td><a href="/admin/empleados/edit/{{this.id}}"><i class="fas fa-edit"></i></a>&nbsp&nbsp&nbsp&nbsp&nbsp<a href="/admin/empleados/delete/{{this.id}}"><i class="fas fa-trash-alt"></i></a></td>
+                            </tr>
+                            {{else}}
+                            <tr>
+                            <th scope="row">Ninguno</th>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

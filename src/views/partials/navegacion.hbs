@@ -4,13 +4,13 @@
     <a class="navbar-brand" href="/">
       Sistema Ventas
     </a>
+    {{#if user}}
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
-        {{#if user}}
         <li class="nav-item">
           <a class="nav-link" href="/">Nueva Venta</a>
         </li>
@@ -33,8 +33,9 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/admin/nuevo_empleado">Añadir Empleado</a>
+            <a class="dropdown-item" href="/admin/empleados">Administrar Empleados</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="/stock/add">Administrar Empleados</a>
+            <a class="dropdown-item" href="/admin/tienda">Configuración Tienda</a>
           </div>
         </li>
         {{/if}}
@@ -43,13 +44,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/logout">Desconectar</a>
-        </li>
-        {{else}}
-        <li class="nav-item">
-          <a class="nav-link" href="/signin">Entrar</a>
-        </li>
-        {{/if}}
+        </li> 
       </ul>
     </div>
+    {{/if}}
   </div>
 </nav>

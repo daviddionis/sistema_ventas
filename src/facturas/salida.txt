@@ -1,6 +1,8 @@
-Tienda TuMadre
+Dionis Inc
+CIF: 48065085F
 
-1 [4464]: Bacon 100g    2.55€
-1 [31312]: Agua 6L    0.95€
+Productos
+1-[31312] Agua 6L	1.15€
+1-[3113212] Fanta .33L	0.49€
 
-Total: 3.5€
+Total: 1.64€

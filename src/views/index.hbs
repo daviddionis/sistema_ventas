@@ -7,6 +7,7 @@
                     <h5>Productos</h5>
                 </div>
                 <div class="card-body">
+                    <div class="table-responsive-sm">
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
@@ -31,10 +32,12 @@
                             {{/each}}
                         </tbody>
                     </table>
+                    </div>
                     <h5 class="float-right">Total: {{subtotal}}</h5>
                     <br>
                     <form action="/venta/factura" method="POST">
                     <div class="form-group">
+                        <a href="/" class="btn-succes btn btn-primary btn-danger float-left">Limpiar</a>
                         <button class="btn-succes btn btn-primary float-right" type="submit">Generar Factura</button>
                     </div>
                     </form>

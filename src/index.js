@@ -7,12 +7,25 @@ const session=require('express-session');
 const MySQLStore=require('express-mysql-session');
 const { database }=require('./keys');
 const passport=require('passport');
+const fs=require('fs')
+const {existeAdmin}=require('./lib/auth');
+
 
 //Iniciar librerias
 const app=express();
 require('./lib/passport');
-productos_usuario=['init'];
+productos_usuario=[];
 subtotal=0;
+config=fs.readFileSync(path.join(__dirname, '../config.txt'), 'utf8').split(';');
+tienda={
+    nombre: config[0],
+    nombre_fiscal: config[1],
+    cif_dni: config[2],
+    primera_direccion: config[3],
+    segunda_direccion: config[4],
+    lectura: config[5],
+    factura: config[6]
+}
 
 //Configuracion
 app.set('port', process.env.PORT || 80);
@@ -49,8 +62,8 @@ app.use((req,res,next)=>{
 });
 
 //Rutas
-app.use(require('./routes/index'));
 app.use(require('./routes/authentication'));
+app.use('/welcome',require('./routes/welcome'));
 app.use('/venta',require('./routes/venta')); 
 app.use('/admin',require('./routes/admin')); 
 app.use('/stock',require('./routes/stock')); 
@@ -60,5 +73,9 @@ app.use('/links',require('./routes/links'));  //se accede mediante /links/...
 //Public
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+
 //Iniciar Server
+app.get('/', (req,res)=>res.redirect('/venta'));
+
 app.listen(app.get('port'), ()=>console.log('Server is running on '+app.get('port')));

@@ -57,6 +57,27 @@ passport.use('local.signup', new LocalStrategy({
     
 }));
 
+passport.use('local.primeravez', new LocalStrategy({
+    usernameField: 'username',
+    passwordField: 'password',
+    passReqToCallback: true
+}, async (req,username, password, done)=>{
+    const newUser={
+        username,
+        password,
+        fullname: req.body.fullname
+    };
+    if (req.body.is_admin=='Administrador'){
+        newUser.is_root=true;
+    }else{
+        newUser.is_root=false;
+    }
+    newUser.password=await helpers.encriptarContra(password);
+    const result=await pool.query('INSERT INTO empleados SET ?', [newUser]);
+    newUser.id=result.insertId; //id que nos da mysql
+    return done(null, newUser, req.flash('success','Usuario creado')); //callback necesario;
+    
+}));
 
 passport.serializeUser((user, done)=>{
     done(null, user.id);
